@@ -41,6 +41,7 @@ function addEntry() {
         echo $HEADER > htmlTemp.txt
         cat htmlTemp.txt >> index.html
     done
+    echo "Done"
     rm htmlTemp.txt
 }
 

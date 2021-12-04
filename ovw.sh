@@ -33,7 +33,7 @@ function addEntry() {
         done < $dir/news$i.txt
 
         HEADER=$(
-            echo "<li><a href="./pages/$dir/news$i.html"/>${infoVar[2]}</a><li>"
+            echo "<li><a href="./pages/$dir/news$i.html">${infoVar[2]}</a><li>"
         )
 
         echo $HEADER

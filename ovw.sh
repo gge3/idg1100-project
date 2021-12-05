@@ -3,7 +3,7 @@
 currentDate=`date +%d-%m-%y`
 dir=$(echo news-$currentDate)
 
-rm index.html
+rm /var/www/html/index.html
 
 function createIndex() {
     HTML=$(
@@ -19,9 +19,9 @@ function createIndex() {
         "
     )
 
-    echo $HTML > htmlTemp.txt
+    echo $HTML > /var/www/html/htmlTemp.txt
 
-    cat htmlTemp.txt > index.html
+    cat /var/www/html/htmlTemp.txt > /var/www/html/index.html
 }
 
 function addEntry() {
@@ -30,7 +30,7 @@ function addEntry() {
         while read line; do
             infoVar[$n]=$line
             n=$((n+1))
-        done < $dir/news$i.txt
+        done < /var/www/html/$dir/news$i.txt
 
         HEADER=$(
             echo "<li><a href="./pages/$dir/news$i.html">${infoVar[2]}</a><li>"
@@ -38,11 +38,11 @@ function addEntry() {
 
         echo $HEADER
 
-        echo $HEADER > htmlTemp.txt
-        cat htmlTemp.txt >> index.html
+        echo $HEADER > /var/www/html/htmlTemp.txt
+        cat /var/www/html/htmlTemp.txt >> /var/www/html/index.html
     done
     echo "Done"
-    rm htmlTemp.txt
+    rm /var/www/html/htmlTemp.txt
 }
 
 createIndex

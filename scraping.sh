@@ -20,7 +20,7 @@ function dump_webpage() {
 function strip() {   
 
     #we check if the dir exists. If not, it is created.
-    if [ ! -d "$dir" ]; then
+    if [ ! -d "/var/www/html/$dir" ]; then
         mkdir $dir
     fi
 
@@ -28,7 +28,7 @@ function strip() {
     for (( i=1; i<4; ++i )) do
 
         #first we create the text file in our new directory
-        touch $dir/news$i.txt
+        touch /var/www/html/$dir/news$i.txt
 
         #we set up a variable to get the news article link
         LI=$(
@@ -39,20 +39,20 @@ function strip() {
         FINALLINK=$(echo https://www.tv2.no$LI | sed 's/ //g')
 
         #we save the full link to a temporary file.
-        echo $FINALLINK >> final.txt
+        echo $FINALLINK >> /var/www/html/final.txt
 
         #we gather the title and the image from previously created link.
-        curl $FINALLINK | grep -E -o "(\">).*(<\/h1>)" | sed 's/\">//g' | sed 's/<\/h1>//g' >> final.txt
+        curl $FINALLINK | grep -E -o "(\">).*(<\/h1>)" | sed 's/\">//g' | sed 's/<\/h1>//g' >> /var/www/html/final.txt
 
-        echo $timestamp >> final.txt
+        echo $timestamp >> /var/www/html/final.txt
 
-        curl $FINALLINK | grep -E -o -m 3 "(data-src=).*(\" data)" | sed "s/data-src=\"//g"| sed "s/\" data//g" | head -n1 | tail -1 >> final.txt
+        curl $FINALLINK | grep -E -o -m 3 "(data-src=).*(\" data)" | sed "s/data-src=\"//g"| sed "s/\" data//g" | head -n1 | tail -1 >> /var/www/html/final.txt
 
         #we put the stdout of cat final.txt into our new created file.
-        cat final.txt > $dir/news$i.txt
+        cat /var/www/html/final.txt > /var/www/html/$dir/news$i.txt
 
         #we delete final.txt as its purpose is now achived.
-        rm final.txt
+        rm /var/www/html/final.txt
 
         echo Data processed.
     

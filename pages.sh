@@ -7,7 +7,7 @@ declare -A infoVar=()
 
 function chkDir(){
 
-    if [ ! -d "pages/$dir" ]; then
+    if [ ! -d "/var/www/html/pages/$dir" ]; then
         mkdir -p pages/$dir
     fi
 }
@@ -29,9 +29,9 @@ function createWeb(){
         <p>Fetched on $3 <a href="$1">Original article</a></p> "
     )
 
-    echo $HTML > htmlTemp.txt
+    echo $HTML > /var/www/html/htmlTemp.txt
 
-    cat htmlTemp.txt > pages/$dir/news$5.html
+    cat /var/www/html/htmlTemp.txt > /var/www/html/pages/$dir/news$5.html
 }
 
 function createPages(){
@@ -41,7 +41,7 @@ function createPages(){
         while read line; do
             infoVar[$n]=$line
             n=$((n+1))
-        done < $dir/news$i.txt
+        done < /var/www/html/$dir/news$i.txt
 
         echo "INFO1: ${infoVar[1]}"
         echo "INFO2: ${infoVar[2]}"
@@ -65,16 +65,16 @@ function createPages(){
             </html>"
         )
 
-        echo $HTML > htmlTemp.txt
+        echo $HTML > /var/www/html/htmlTemp.txt
 
-        cat htmlTemp.txt > pages/$dir/news$i.html
+        cat /var/www/html/htmlTemp.txt > /var/www/html/pages/$dir/news$i.html
 
         infoVar[4]=
         
 
     done
 
-    rm htmlTemp.txt
+    rm /var/www/html/htmlTemp.txt
 
     
 }

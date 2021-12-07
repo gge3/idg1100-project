@@ -10,11 +10,15 @@ The news can be accessible on http://ip-of-raspberry/index.html . Note that the 
 
 ## IMPORTANT NOTES
 
-- To get started, execute **deployment.sh** script with super user permission. **IT HAS TO BE EXECUTED IN "/var/www/html" IN ORDER FOR THE SCRIPT TO WORK CORRECLTY**. Else it will not work. 
+- Last version of nginx must be installed prior to any scrip execution
+- Know your Raspberry's IP
+- Make sure the directory **/var/www/html** exists and that you have **ALL** necessary permissions to the directory.
+
+- To get started, execute **deployment.sh** script. **IT HAS TO BE EXECUTED IN "/var/www/html" IN ORDER FOR THE SCRIPT TO WORK CORRECLTY**. Else it will not work. 
 
 - This script does a clone of this repository on /Downloads/tempdir. When executing **deployment.sh** it might ask for permission to delete git files. Press "y", since it's cleaning the temporary files created to copy and move them to directories. 
 
-- **deployment.sh** also edits the user's crontab file and adds four lines, to automatically executed the newly added scripts every six hours.
+- **deployment.sh** also edits the user's crontab file and adds four lines, to automatically execute the newly added scripts every six hours.
 
 - **scraping.sh** will scrap html code from the website, clean it and output links for other pages to work. It creates a directory with plain text files. 
 

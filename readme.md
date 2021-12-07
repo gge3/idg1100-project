@@ -1,16 +1,16 @@
-#idg1100 project
+# idg1100 project
 
-##Author: Gil Grau i Enrich
+## Author: Gil Grau i Enrich
 
 Please read below to fully understand the functionality of the scripts.
 
-These are a series of scripts made to gather recent news from [tv2.no]https://www.tv2.no/nyheter/. The scripts will auto-update the news articles every six hours. It uses nginx with the configuration file already provided for. 
+These are a series of scripts made to gather recent news from [tv2.no] https://www.tv2.no/nyheter/. The scripts will auto-update the news articles every six hours. It uses nginx with the configuration file already provided for. 
 
 The news can be accessible on http://ip-of-raspberry/index.html . Note that the ip will depending on the setup of the Raspberry's IP.
 
-##IMPORTANT NOTES
+## IMPORTANT NOTES
 
-- To get started, execute **deployment.sh** script with super user permission. **IT HAS TO BE EXECUTED IN /var/www/html IN ORDER FOR THE SCRIPT TO WORK CORRECLTY**. Else it will not work. 
+- To get started, execute **deployment.sh** script with super user permission. **IT HAS TO BE EXECUTED IN "/var/www/html" IN ORDER FOR THE SCRIPT TO WORK CORRECLTY**. Else it will not work. 
 
 - This script does a clone of this repository on /Downloads/tempdir. When executing **deployment.sh** it might ask for permission to delete git files. Press "y", since it's cleaning the temporary files created to copy and move them to directories. 
 

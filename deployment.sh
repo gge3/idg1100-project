@@ -32,5 +32,7 @@ line4="0 */6 * * * bash +x /var/www/html/repoupdate.sh"
 (crontab -u $(whoami) -l; echo "$line3" ) | crontab -u $(whoami) -
 (crontab -u $(whoami) -l; echo "$line4" ) | crontab -u $(whoami) -
 
+rm -r /home/pi/Downloads/tempdir
+
 
 

@@ -6,7 +6,12 @@ dir=$(echo news-$currentDate)
 rm /var/www/html/index.html
 
 function createIndex() {
-    HTML=$(
+    FILE=/var/www/html/index.html
+    if test -f "$FILE"; then
+        echo "$FILE exists."
+    else
+
+        HTML=$(
         echo "<!DOCTYPE html> 
         <html lang="no"> 
         <head> 
@@ -17,11 +22,12 @@ function createIndex() {
         <h1>List of news</h1> 
         <ul>
         "
-    )
+        )
 
-    echo $HTML > /var/www/html/htmlTemp.txt
+        echo $HTML > /var/www/html/htmlTemp.txt
 
-    cat /var/www/html/htmlTemp.txt > /var/www/html/index.html
+        cat /var/www/html/htmlTemp.txt > /var/www/html/index.html
+    fi
 }
 
 function addEntry() {

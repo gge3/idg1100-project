@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currentDate=`date +%d-%m-%y`
+currentDate=`date +%d-%m-%y-%H-%M`
 timestamp=`date -R`
 dir=$(echo news-$currentDate)
 outfile="output.txt"

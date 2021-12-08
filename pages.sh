@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currentDate=`date +%d-%m-%y`
+currentDate=`date +%d-%m-%y-%H-%M`
 dir=$(echo news-$currentDate)
 
 declare -A infoVar=()

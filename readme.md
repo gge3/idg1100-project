@@ -17,7 +17,6 @@ The news can be accessible on http://ip-of-raspberry/index.html . Note that the 
 - To get started, execute **deployment.sh** script. **IT HAS TO BE EXECUTED IN "/var/www/html" IN ORDER FOR THE SCRIPT TO WORK CORRECLTY**. Else it will not work. 
 
 - This script does a clone of this repository on /Downloads/tempdir. When executing **deployment.sh** it might ask for permission to delete git files. Press "y", since it's cleaning the temporary files created to copy and move them to directories. 
-
 - **deployment.sh** also edits the user's crontab file and adds four lines, to automatically execute the newly added scripts every six hours.
 
 - **scraping.sh** will scrap html code from the website, clean it and output links for other pages to work. It creates a directory with plain text files. 
@@ -27,6 +26,11 @@ The news can be accessible on http://ip-of-raspberry/index.html . Note that the 
 - **ovw.sh** creates an index.html page linking all **pages.sh** files in a single page.
 
 - Included on the provided scripts (now available on /var/www/html) there's an automatic update to any git repository, **repoupdate.sh**. Set up a local git repo, then create any remote repository and link it to your local one. The **repoupdate.sh** will automatically ADD, COMMIT AND PUSH any modifications to the directory. 
+
+## OPTIONAL ADDED FEATURES
+- The repo update script pushes all new files and the updated files to a GitHub repository. (Two stars) 
+- The deployment script configures a blank installation of Raspberry Pi OS with all that is necessary for the project to work. (One star)
+- Also retrieve a summary of each news article and add it as a fifth line in the information files. (Two stars)
 
 
 

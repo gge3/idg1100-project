@@ -23,9 +23,9 @@ bash +x /var/www/html/pages.sh
 bash +x /var/www/html/ovw.sh
 
 line1="0 */6 * * * bash +x /var/www/html/scraping.sh"
-line2="0 */6 * * * bash +x /var/www/html/pages.sh"
-line3="0 */6 * * * bash +x /var/www/html/ovw.sh"
-line4="0 */6 * * * bash +x /var/www/html/repoupdate.sh"
+line2="1 */6 * * * bash +x /var/www/html/pages.sh"
+line3="1 */6 * * * bash +x /var/www/html/ovw.sh"
+line4="2 */6 * * * bash +x /var/www/html/repoupdate.sh"
 
 (crontab -u $(whoami) -l; echo "$line1" ) | crontab -u $(whoami) -
 (crontab -u $(whoami) -l; echo "$line2" ) | crontab -u $(whoami) -

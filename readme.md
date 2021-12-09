@@ -6,7 +6,7 @@ Please read below to fully understand the functionality of the scripts.
 
 These are a series of scripts made to gather recent news from [tv2.no] https://www.tv2.no/nyheter/. The scripts will auto-update the news articles every six hours. It uses nginx with the configuration file already provided for. 
 
-The news can be accessible on http://ip-of-raspberry/index.html . Note that the ip will depending on the setup of the Raspberry's IP.
+The news can be accessible on http://ip-of-raspberry/index.html . Note that the ip will change depending on the setup of the Raspberry's IP.
 
 ## IMPORTANT NOTES
 

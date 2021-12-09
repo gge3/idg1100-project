@@ -14,6 +14,8 @@ The news can be accessible on http://ip-of-raspberry/index.html . Note that the 
 - Know your Raspberry's IP
 - Make sure the directory **/var/www/html** exists and that you have **ALL** necessary permissions to the directory.
 
+- The file called **default** is the file that configures nginx. 
+
 - To get started, execute **deployment.sh** script. **IT HAS TO BE EXECUTED IN "/var/www/html" IN ORDER FOR THE SCRIPT TO WORK CORRECLTY**. Else it will not work. 
 
 - This script does a clone of this repository on /Downloads/tempdir. When executing **deployment.sh** it might ask for permission to delete git files. Press "y", since it's cleaning the temporary files created to copy and move them to directories. 

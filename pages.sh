@@ -12,28 +12,6 @@ function chkDir(){
     fi
 }
 
-function createWeb(){
-
-    echo "IN CREATE WEB"
-
-    HTML=$(
-        echo "
-        <\!DOCTYPE html> 
-        <html> 
-        <head> 
-        <title>$2</title> 
-        </head> 
-        <body> 
-        <h1>$2</h1> 
-        <div><img src="$4"/></div> 
-        <p>Fetched on $3 <a href="$1">Original article</a></p> "
-    )
-
-    echo $HTML > /var/www/html/htmlTemp.txt
-
-    cat /var/www/html/htmlTemp.txt > /var/www/html/pages/$dir/news$5.html
-}
-
 function createPages(){
     for (( i=1; i<4; ++i )) do
 

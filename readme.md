@@ -27,10 +27,21 @@ The news can be accessible on http://ip-of-raspberry/index.html . Note that the 
 
 - Included on the provided scripts (now available on /var/www/html) there's an automatic update to any git repository, **repoupdate.sh**. Set up a local git repo, then create any remote repository and link it to your local one. The **repoupdate.sh** will automatically ADD, COMMIT AND PUSH any modifications to the directory. 
 
+- The repoupdate.sh doesn't execute upon deployment. It is, however, added as a cronjob.
+
 ## OPTIONAL ADDED FEATURES
-- The repo update script pushes all new files and the updated files to a GitHub repository. (Two stars) 
-- The deployment script configures a blank installation of Raspberry Pi OS with all that is necessary for the project to work. (One star)
-- Also retrieve a summary of each news article and add it as a fifth line in the information files. (Two stars)
+- 🌟🌟 The repo update script pushes all new files and the updated files to a GitHub repository. 
+- 🌟🌟 Also retrieve a summary of each news article and add it as a fifth line in the information files. 
+- 🌟The deployment script configures a blank installation of Raspberry Pi OS with all that is necessary for the project to work. 
+- 🌟 Sort the news articles by date, with the most recent first 
+- 🌟 On even days, display sport articles
+
+### KNOWN PROBLEMS
+
+- On even days, when displaying the sports section, the first article doesn't show up properly. This doesn't happen on odd days.
+- When launching the scraping.sh script, you might get some errors with curl.
+- Although the logic (and code) is there, the ovw.sh fails to detect an existing index.html file, thus overwriting the existing one, getting only three articles every time you scrap and generate pages.
+
 
 
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #This script gets the necessary files and makes the project work for a blank installation of a raspberry.
+#FOR USE IN /var/www/html , elsewhere will not work.
 
 git clone git@github.com:gge3/idg1100-project.git /home/pi/Downloads/tempdir
 
@@ -20,7 +21,6 @@ chmod +x /var/www/html/repoupdate.sh
 bash +x /var/www/html/scraping.sh
 bash +x /var/www/html/pages.sh
 bash +x /var/www/html/ovw.sh
-bash +x /var/www/html/repoupdate.sh
 
 line1="0 */6 * * * bash +x /var/www/html/scraping.sh"
 line2="0 */6 * * * bash +x /var/www/html/pages.sh"

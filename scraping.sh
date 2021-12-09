@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currentDate=`date +%d-%m-%y-%H-%M`
+currentDate=`date +%d-%m-%y-%H`
 timestamp=`date -R`
 dir=$(echo news-$currentDate)
 outfile="output.txt"
@@ -37,6 +37,10 @@ function strip() {
 
         #we craft the article link with the variable.
         FINALLINK=$(echo https://www.tv2.no$LI | sed 's/ //g')
+
+        #ESTAVES TREBALLANT EN AQUESTA LINIA; SI NO FUNCIONA CODI ELIMINA AQUESRA LINIA.
+        curl $FINALLINK | grep -E -A 1 "__subtitle\">" | sed 's/<p itemprop="description" class="articleheader__subtitle">//g' >> /var/www/html/final.txt
+
 
         #we save the full link to a temporary file.
         echo $FINALLINK >> /var/www/html/final.txt

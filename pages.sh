@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currentDate=`date +%d-%m-%y-%H-%M`
+currentDate=`date +%d-%m-%y-%H`
 dir=$(echo news-$currentDate)
 
 declare -A infoVar=()
@@ -47,6 +47,8 @@ function createPages(){
         echo "INFO2: ${infoVar[2]}"
         echo "INFO3: ${infoVar[3]}"
         echo "INFO4: ${infoVar[4]}"
+        echo "INFO5: ${infoVar[5]}"
+        echo "INFO6: ${infoVar[6]}"
 
         #createWeb"${infoVar[1]}" "${infoVar[2]}" "${infoVar[3]}" "${infoVar[4]}" "$i"
 
@@ -55,12 +57,13 @@ function createPages(){
             <html lang="no">
             <head> 
             <meta charset="UTF-8">
-            <title>${infoVar[2]}</title> 
+            <title>${infoVar[4]}</title> 
             </head> 
             <body> 
-            <h1>${infoVar[2]}</h1> 
-            <div><img src="${infoVar[4]}"/></div> 
-            <p>Fetched on ${infoVar[3]} <a href="${infoVar[1]}">Original article</a></p>
+            <h1>${infoVar[4]}</h1>
+            <h3>${infoVar[2]}</h3>
+            <div><img src="${infoVar[6]}"/></div> 
+            <p>Fetched on ${infoVar[5]} <a href="${infoVar[3]}">Original article</a></p>
             </body>
             </html>"
         )
@@ -69,7 +72,7 @@ function createPages(){
 
         cat /var/www/html/htmlTemp.txt > /var/www/html/pages/$dir/news$i.html
 
-        infoVar[4]=
+        infoVar[6]=
         
 
     done

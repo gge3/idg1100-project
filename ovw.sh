@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currentDate=`date +%d-%m-%y-%H-%M`
+currentDate=`date +%d-%m-%y-%H`
 dir=$(echo news-$currentDate)
 
 rm /var/www/html/index.html
@@ -39,7 +39,7 @@ function addEntry() {
         done < /var/www/html/$dir/news$i.txt
 
         HEADER=$(
-            echo "<li><a href="./pages/$dir/news$i.html" target="_blank">${infoVar[2]}</a>"
+            echo "<li><a href="./pages/$dir/news$i.html" target="_blank">${infoVar[4]}</a>"
         )
 
         echo $HEADER
